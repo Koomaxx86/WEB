@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>audio - 오디오 파일을 재생할 수 있는 태그</title>
 </head>
+
 <body>
   <!-- 
     audio 태그 속성
@@ -19,18 +21,21 @@
     - MIME type(파일 형식)      : audio/mp3, audio/ogg, audio/wav
    -->
 
-   <audio src="audio/bgm.mp3" controls autoplay></audio>
+   <!-- 오디오 파일 불러오기   컨트롤표시 자동재생 -->
+  <audio src="audio/bgm.mp3" controls autoplay></audio>
 
-   <!-- 
+  <!-- 
     source
       : 브라우저마다 지원하는 오디오 파일 형식에 대한 호환성을 지원하기 위해
       여러가지 파일 형식을 동시에 제공하는 태그
     -->
 
-    <audio controls autoplay>
-      <source src="audio/bgm.mp3" type="audio/mp3">
-      <source src="audio/bgm.mp3" type="audio/ogg">
-      <source src="audio/bgm.mp3" type="audio/wav">
-    </audio>
+    <!-- 오디오 파일 정의. 컨트롤표시, 자동재생 -->
+  <audio controls autoplay>
+    <source src="audio/bgm.mp3" type="audio/mp3">
+    <source src="audio/bgm.mp3" type="audio/ogg">
+    <source src="audio/bgm.mp3" type="audio/wav">
+  </audio>
 </body>
+
 </html>

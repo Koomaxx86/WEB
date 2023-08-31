@@ -10,27 +10,28 @@
 <body>
   <!-- 
         iframe (inline frame)
-        : 웹 페이지 안에서 다른 웹 페이지를 표시하느 ㄴ태그
+        : 웹 페이지 안에서 다른 웹 페이지를 표시하는 태그
 
         - name 속성을 지정하면 target 프레임으로 사용할 수 있다
         - naver, google 등 일부 사이트에서는 iframe 을 통해 접근을 막고 있다.
     -->
 
   <h3>내부 페이지 및 외부 페이지 표시하기</h3>
+  <!-- src 링크의 페이지를 지정한 사이즈에 표시 -->
   <iframe src="03_inner.html" width="400" height="240"></iframe>
   <iframe src="http://www.tcpschool.com" width="400" height="240"></iframe>
 
   <hr>
 
   <h3>target 프레임으로 표시하기</h3>
+  <!-- 링크값이 없고 name 속성이 frame1으로 지정된 iframe 생성 -->
   <iframe src="" name="frame1" width="400" height="240"></iframe>
-
   <p>
+    <!-- 링크태그 지정 후 target태그로 링크가 표기될 iframe지정 후 링크가 적용될 텍스트 정의 -->
     <a href="http://typingclub.com" target="frame1">영타 사이트</a>
   </p>
 
   <iframe src="" name="frame2" width="400" height="240"></iframe>
-
   <p>
     <a href="http://hancomtyping.com" target="frame2">한타 사이트</a>
   </p>

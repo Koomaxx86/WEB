@@ -6,7 +6,7 @@
   <title>텍스트 태그</title>
 </head>
 <body>
-  <!-- heading : 제목 태그 (h1~h6) -->
+  <!-- heading : 제목 태그 (h1~h6) 숫자가 클수록 폰트는 작아진다-->
   <!-- h$*6{Hello HTML} -->
   <h1>Hello HTML</h1>
   <h2>Hello HTML</h2>
@@ -45,9 +45,9 @@
     -->
 
     <hr>
-    공                  백 <br>
-    공&nbsp&nbsp&nbsp&nbsp;백 <br>
-    &lt;        
+    공                  백 <br>     <!-- 일반 문자의 공백은 1칸만 인식한다. -->
+    공&nbsp&nbsp&nbsp&nbsp;백 <br>  <!-- 엔티티를 이용한 공백지정은 입력한데로 반영된다. -->
+    &lt;                            <!-- br이 없기에 이어서 출력된다. -->
     &gt;        
     &quot;      
     &amp; 

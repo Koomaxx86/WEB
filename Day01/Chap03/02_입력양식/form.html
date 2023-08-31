@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>form</title>
 </head>
+
 <body>
     <!-- 
         form 태그
@@ -32,14 +34,22 @@
     -->
 
     <h1>로그인</h1>
+    <!-- form 태그 선언 및 정의 -->
+    <!-- action에는 실 사용시 클라이언트에서 보낼 데이터를 받을 url을 입력한다 -->
+    <!-- method는 간단하고 보안이 필요없으면 get방식을, 중요한 결제, 비밀번호등의 데이터는 post방식을 사용한다. -->
     <form action="login" method="get">
+        <!-- label 이름표 선언 및 표기할 텍스트 선언 -->
         <label for="id">아이디</label>
+        <!-- input선언 후 입력받은 type를 text로 선언-->
+        <!-- name는 입력받은 text값을 name에 정의된 이름으로 서버측으로 보낸다 ex) user_id : 입력값 -->
+        <!-- id는  해당 값을 식별하기 위한 값이다. ex) 참조변수? -->
         <input type="text" name="user_id" id="id"> <br>
 
         <label for="pw">비밀번호</label>
         <input type="password" name="user_pw" id="pw"> <br>
 
         <!-- 입력타입 submit, 내용은 "로그인" -->
+        <!-- submit은 입력받은 데이터를 action에 정의한 서버로 전송하는 버튼이다 -->
         <input type="submit" value="로그인">
     </form>
 
@@ -47,43 +57,50 @@
 
     <form action="input" method="post">
 
-        ID      : <input type="text" name="id"> <br>
-        PW      : <input type="password" name="password"> <br>
-        email   : <input type="email" name="email"> <br>
-        url     : <input type="url" name="url"> <br>
-        tel     : <input type="tel" name="tel"> <br>
-        color   : <input type="color" name="color"> <br>
+        ID : <input type="text" name="id"> <br>
+        PW : <input type="password" name="password"> <br>
+        email : <input type="email" name="email"> <br>
+        url : <input type="url" name="url"> <br>
+        tel : <input type="tel" name="tel"> <br>
+        color : <input type="color" name="color"> <br>
 
         radio (성별)
-                <label for="female">여자</label>
-                <input type="radio" name="gender" id="female" value="female">
-                
-                <label for="male">남자</label>
-                <input type="radio" name="gender" id="male" value="male">
-                <br>
+        <!-- frmale 라벨정의 및 여자로 표기 -->
+        <label for="female">여자</label>
+        <!-- radio타입(하나만 선택가능함)으로 선언 -->
+        <!-- 선택한 값이 서버로 전송되기 위해 value값을 지정해줘야 한다 -->
+        <input type="radio" name="gender" id="female" value="female">
+
+        <label for="male">남자</label>
+        <input type="radio" name="gender" id="male" value="male">
+        <br>
 
         checkbox(취미)
-                <label for="exercise">운동</label>
-                <input type="checkbox" name="hobby" id="exercise" value="exercise">
+        <label for="exercise">운동</label>
+        <!-- checkbox 타입은 중복 선택이 가능하다 -->
+        <input type="checkbox" name="hobby" id="exercise" value="exercise">
 
-                <label for="movie">영화감상</label>
-                <input type="checkbox" name="hobby" id="movie" value="movie">
+        <label for="movie">영화감상</label>
+        <input type="checkbox" name="hobby" id="movie" value="movie">
 
-                <label for="book">독서</label>
-                <input type="checkbox" name="hobby" id="book" value="book">
-                <br>
-        date                : <input type="date" name="date"> <br>
-        month               : <input type="month" name="month"> <br>
-        time                : <input type="time" name="time"> <br>
-        datetime-local      : <input type="datetime-local" name="datetime-local"> <br>
+        <label for="book">독서</label>
+        <input type="checkbox" name="hobby" id="book" value="book">
+        <br>
+        date : <input type="date" name="date"> <br>
+        month : <input type="month" name="month"> <br>
+        time : <input type="time" name="time"> <br>
+        datetime-local : <input type="datetime-local" name="datetime-local"> <br>
 
-        number              : <input type="number" name="number" min="1" max="100" step="1"> <br>
-        range               : <input type="range" name="range" min="1" max="100" step="1"> <br>
+        <!--                                 최소값   최대값     증가값 -->
+        number : <input type="number" name="number" min="1" max="100" step="1"> <br>
+        range : <input type="range" name="range" min="1" max="100" step="1"> <br>
 
         <label for="email2">이메일 : </label>
         <input type="text" name="email2" id="email2">
         @
+        <!-- select 태그 선언 및 name와 id셋팅 -->
         <select name="domain" id="domain">
+            <!-- 각 옵션 셋팅 -->
             <option value="1">naver.com</option>
             <option value="2">nate.com</option>
             <option value="3">kakao.com</option>
@@ -91,52 +108,15 @@
         </select>
         <br>
 
+        <!--텍스트 에어리어  -->
+        <!-- 
+            cols    : 문자의 평균 가로 길이(byte)
+            rows    : 문자의 줄 수
+         -->
         <textarea name="content" id="content" cols="30" rows="10"></textarea>
-        <br>
-        <input type="reset" value="RESET">
-        <input type="submit" value="SUBMIT">
-
 
     </form>
 
-    <hr>
-
-    <!-- required 폼에서 입력한 내용이 없으면 메세지가 나온다 -->
-    <form action="option" method="post">
-        <label for="test1">필수 입력(required)</label>
-        <input type="text" name="test1" id="test1" required>
-        <br>
-
-        <!-- readonly는 내용작성이 불가능하다 -->
-        <label for="test2">읽기 전용(readonly)</label>
-        <input type="text" name="test2" id="test2" value="읽기 전용" readonly>
-        <br>
-
-        <!-- value값에 값을 입력하면 기본으로 나온다. -->
-        <label for="test3">일반 입력</label>
-        <input type="text" name="test3" id="test3" value="기본값">
-        <br>
-
-        <!-- disabled는 비활성화된 상태로 출력 -->
-        <label for="test4">사용 불가</label>
-        <input type="text" name="test4" id="test4" value="사용불가" disabled> 
-        <br>
-
-        <!-- autofocus 해당 속성이 적용된 곳으로 자동으로 이동 -->
-        <label for="test5">자동 포커싱</label>
-        <input type="text" name="test5" id="test5" autofocus>
-        <br>
-
-        <!-- type를 hidden으로 지정하면 페이지에는 보이지 않지만 value값을 가지고 있다 -->
-        <!-- ex) 노출될 필요가 없는 게시글 번호 등 -->
-        <label for="test6">숨김 데이터</label>
-        <input type="hidden" name="boardNo" id="test6" value="100">
-        <br>
-        
-        <input type="submit" value="등록">
-    </form>
-
-    <div style="height: 400px;"></div>
-    
 </body>
+
 </html>

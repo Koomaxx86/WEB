@@ -5,13 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Semantic Layout</title>
     <style>
-        /* "*" 모든 요소를 선택하는 선택자 */
         * { 
             margin: 0; 
             padding: 0; 
             box-sizing: border-box;
         }
-
 
         header {
             background-color: black;
@@ -30,7 +28,6 @@
             text-align: center;
         }
 
-        /* 가상선택자 hober: 마우스를 올렸을때 실행 */
         nav a:hover {
             background-color: cornflowerblue;
         }
@@ -44,20 +41,17 @@
             min-height: 200px;
         }
 
-        /* 태그 선택자 */
         footer {
             background-color: lightgray;
             min-height: 80px;
         }
 
-        /* 종속선택자 */
         footer .copy {
             float: left;
             line-height: 80px;
             padding: 0px 20px;
         }
 
-        /* 종속선택자 */
         footer .family {
             float: right;
             line-height: 80px;

@@ -19,14 +19,18 @@
         - width/height  : 비디오 가로 세로 사이즈
 
         - video format(파일포맷)    : mp4, webm, ogg
-        - MIME type (파일형식)      : video/mp4, video/webm, video/ogg
+        - MIME type (파일형식)      : (파일의종류/형식) video/mp4, video/webm, video/ogg...
     -->
-    <video src="video/video.mp4"
-           autoplay controls width="1024" height="768"></video>
+
+    <!-- 비디오파일 정의 및 불러오기  자동재생  컨트롤표시  가로 세로 사이즈 지정 -->
+    <video src="video/video.mp4" autoplay controls width="1024" height="768"></video>
 
     <hr>
 
+    <!-- 비디오파일 정의 및 전체 사이즈 지정 -->
     <video width="1024" height="768">
+        <!-- 소스로 제공된 비디오 파일 설정 및 타입 지정 -->
+        <!--                              파일의종류(비디오,오디오,텍스트 등등)/ 파일의 형식(jpeg,mp3,ogg 등등 확장자)  -->
         <source src="video/video.mp4" type="video/mp4">
         <source src="video/video.ogg" type="video/ogg">
         <source src="video/video.webm" type="video/webm">
@@ -34,8 +38,7 @@
 
     <hr>
 
-    <video src="video/video.mp4"
-           autoplay controls width="1024" height="768"
-           poster="img/poster.png"></video>
+    <!--                                                                                썸네일 지정 -->
+    <video src="video/video.mp4" autoplay controls width="1024" height="768" poster="img/poster.png"></video>
 </body>
 </html>

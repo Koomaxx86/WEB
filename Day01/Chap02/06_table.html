@@ -13,8 +13,8 @@
                                   * 텍스트를 bold체로 가운데 정렬
         - td (table data)       : 표의 한 칸의 열(data)을 표시
 
-        * rowspan               : 상하(행)의 셀을 병합, 
-        * colspan               : 좌우(열)의 셀을 병합, 
+        * rowspan               : 상하(열)의 셀을 병합, 
+        * colspan               : 좌우(행)의 셀을 병합, 
             * 병합할 첫 번째 셀을 기준으로 셀의 개수를 지정
         
         - caption               : 표의 제목
@@ -27,25 +27,34 @@
         - colgroup              : 열 그룹을 지정하여 하나 이상의 열에 동일한 형식을 지정하기 위해 사용
             - col               : 그룹화된 열을 나타내기 위해 사용
     -->
+    <!-- 제목 태그 사용 -->
     <h1>카페 메뉴판</h1>
+    <!-- 테이블 시작 -->
+    <!-- 외부 테이블의 테두리 굵기를 1px로 한다 -->
     <table border="1">
-        <tr>
-            <th width="200">menu</th>
+        <tr> <!-- 하나의 행 생성 -->    
+            <!-- 생성된 행에 넓이 셋팅 후 텍스트 입력 -->
+            <!-- th태그로 bold체로 가운데 정렬 시킨다  -->
+            <th width="200">menu</th>   
             <th width="100">price</th>
             <th width="100">hot/ice</th>
-        </tr>
+        </tr> <!-- 행 생성 종료 -->
+
+        <!-- > : 좌측이 부모. 우측이 자식을 가르킨다 -->
+        <!-- tr의 밑에 td를 3개 생성한다. 그리고 그걸 3번 반복한다 -->
         <!-- (tr>(td*3))*3 -->
         <tr>
-            <td>아메리카노</td>
-            <!-- td[align="center"]{2,500} -->
-            <td align="center">2,500</td>
+            <td>아메리카노</td> <!-- td태그로 열에 data를 입력한다 -->
+            <td align="center">2,500</td>   <!-- align태그로 정렬한 위치를 정하고 값을 입력한다. -->
             <td align="center">hot/ice</td>
         </tr>
+
         <tr>
             <td>카페모카</td>
             <td align="center">3,500</td>
             <td align="center">hot/ice</td>
         </tr>
+
         <tr>
             <td>자바칩 프라프치노</td>
             <td align="center">5,500</td>
@@ -56,15 +65,20 @@
     <hr>
 
     <table border="1">
+        <!-- caption태그로 테이블의 제목 삽입 -->
         <caption>영화관 좌석표</caption>
+        <!-- tr의 자식으로 th이며 넓이가 100이고 $태그로 숫자가 자동으로 증가하는 행을 3개만들고 3번 반복한다. -->
         <!-- tr>(th[width="100"]{$열}*3) -->
         <tr>
             <th width="100">1열</th>
             <th width="100">2열</th>
             <th width="100">3열</th>
         </tr>
+
         <!-- (tr>(td*3))*3 -->
         <tr>
+            <!-- rowspan -->
+            <!-- 시작되는 첫번째 칸부터 입력한 값까지의 병합된 "열"을 만든다 -->
             <td rowspan="2">1+4</td>
             <td>2</td>
             <td>3</td>
@@ -73,23 +87,26 @@
             <td>5</td>
             <td>6</td>
         </tr>
+
         <tr>
+            <!-- 시작되는 첫번째 칸부터 입력된 값까지 병합된 "행"을 만든다  -->
             <td colspan="3">7+8+9</td>
         </tr>
 
     </table>
 
     <hr>
-
+    <!-- 제목 입력 -->
     <h1>월별 수입</h1>
     <table border="1">
-        <thead>
+        <thead> <!-- 테이블 최상단 영역 지정 -->
             <tr>
-                <th>월별</th>
+                <th>월별</th> <!-- th태그로 헤드데이터 입력 -->
                 <th>수입</th>
             </tr>
         </thead>
-        <tbody>
+
+        <tbody> <!-- 테이블 몸체 영역 지정 -->
             <tr>
                 <td>08월</td>
                 <td>1,000,000</td>
@@ -107,7 +124,8 @@
                 <td>2,500,000</td>
             </tr>
         </tbody>
-        <tfoot>
+
+        <tfoot> <!-- 테이블 최하단 영역 지정 -->
             <tr>
                 <td>합계</td>
                 <td>7,000,000</td>
@@ -116,11 +134,14 @@
     </table>
 
     <hr>
-
     <h1>8월 달력</h1>
     <table>
+        <!-- 각각의 열에 대한 그룹 생성 -->
         <colgroup>
+            <!-- col : 생성된 각 열에 대한 정의(첫번째 열부터 순서대로 적용된다.) -->
+            <!-- 첫번째 열 전체에 백그라운드 컬러를 핫핑크로 적용한다 -->
             <col style="background-color: hotpink;">
+            <!-- 두번째 열에 span태그를 통해 2번 부터 6개의 열(7번열까지)에 정의한 style값을 적용한다. -->
             <col span="6" style="background-color: cornflowerblue;">
         </colgroup>
         <tr>
