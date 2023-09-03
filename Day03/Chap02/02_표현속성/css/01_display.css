@@ -25,7 +25,9 @@ li:hover {
 }
 
 /* 화면에 보이지 않게 지정 */
+/* none는 레이아웃 자체가 없어진다 */
 .none { display: none; }
+/* hidden은 레이아웃은 놔두고 컨텐츠만 사라진다 */
 .hidden { visibility: hidden; }
 
 
@@ -37,6 +39,7 @@ li:hover {
       - Grid 레이아웃의 열의 크기를 지정하는 속성
       (여기서는 3개의 열의 크기를 auto 로 지정)    
   */
+  /* auto의 객수 - 열의 갯수 */
   grid-template-columns: auto auto auto;
   background-color: royalblue;
   padding: 10px;

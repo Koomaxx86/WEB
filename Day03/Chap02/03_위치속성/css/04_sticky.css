@@ -26,7 +26,6 @@ h1 { text-align: center; }
         스크롤 영역 안 : relative
         스크롤 영역 밖 : fixed
     */
-    /* 👩‍💻TODO: 여기에 작성해보세요:) */    
     position: sticky;         
     border: 3px solid black;
 }
@@ -39,6 +38,9 @@ h1 { text-align: center; }
     z-index: -1;
 }
 
+/* top에서 100px 밀려 있으나 relative안에서는 내부에
+box와 head로 인해서 더 이상 들어가지 못하기에 붙어있다.
+이후 스크롤을 내리면서 sticky로 변경되면서 top이 적용된다 */
 .first { top: 100px; float: left; background-color: red; }
 .second { top: 100px; float: right; background-color: green; }
 .third { top: 100px; float: left; background-color: yellow; }

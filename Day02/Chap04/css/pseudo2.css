@@ -3,9 +3,12 @@
 /* TODO: 여기에 작성해보세요 */
 table.first {
     width: 100%;
+    /* box테두리 곡률 지정 */
     border-radius: 8px;
-    border-collapse: collapse; /* 이중실선 제거 */
+    /* 이중실선 제거 */
+    border-collapse: collapse; 
     overflow: hidden;
+    /* 그림자 속성 지정 */
     box-shadow: 5px 5px 5px #aaa;
     /* 그림자 : x축 y축 블러 색상 */
 }
@@ -14,10 +17,13 @@ table.first th {
     padding: 8px;
     background-color: cornflowerblue;
     color: white;
+    /* 글자 간격 지정 */
     letter-spacing: 3px;
 }
 
 /* th 태그 중 2번째 요소를 선택 */
+/* 테이블태그 밑 first클래스 선택
+first클래스 밑에 th 중 특정요소 선택 */
 table.first th:nth-child(2) {
     letter-spacing: 45px;
     text-align: center;
@@ -29,47 +35,58 @@ table.first td {
 }
 
 /* 자식요소 중 홀수인 요소만 선택 */
+/* 테이블태그 밑 first클래스 선택
+first클래스 밑에 th 중 홀수요소 선택 */
 table.first tr:nth-child(odd) {
     background-color: lightgray;
 }
 
 /* 자식요소 중 짝수인 요소만 선택 */
+/* 테이블태그 밑 first클래스 선택
+first클래스 밑에 th 중 짝수요소 선택 */
 table.first tr:nth-child(even) {
     background-color: white;
 }
 
+/* td태그중 첫번째 모든 요소 */
 table.first td:first-child {
     width: 10%;
 }
+/* td태그중 2번째 */
 table.first td:nth-child(2) {
     width: 70%;
 }
+
+/* td태그중 마지막 모든 요소 */
 table.first td:last-child {
     width: 20%;
 }
 
+/* table > first의 모든 th, td선택 */
 table.first th,
 table.first td {
+    /* 왼쪽에서 선을 넣어준다 */
     border-left: 1px solid #ccc;
 }
 
 /* :hover
     마우스가 요소에 올라가있는 상태 */
+    /* 모든 tr태그에 hover 액션 지정 */
 table.first tr:hover {
     background-color: cornflowerblue;
     color: white;
+    /* 커서 아이콘 변경 */
     cursor: pointer;
 }
 
-/* :empty
-    내용이 없는 상태
-*/
+/* empty : 내용이 없는 상태 */
 p:empty {
     margin: 100px;
 }
 
 table.second {
     width: 100%;
+    /* border의 테두리 변경(기본실선) */
     border-collapse: collapse;
 }
 
@@ -85,13 +102,20 @@ table.second td {
     text-align: center;
 }
 
-table.second td:first-of-type { width: 15%; }
-table.second td:nth-of-type(2) { width: 65%; }
-table.second td:last-of-type { width: 20%; }
+table.second td:first-of-type { 
+    width: 15%; 
+}
+table.second td:nth-of-type(2) { 
+    width: 65%; 
+}
+table.second td:last-of-type { 
+    width: 20%; 
+}
 
 
 /* part1 : nth-of-type */
 /* nth-of-type 류는 지정한 요소들끼리만 순서를 카운팅한다. */
+/* div중에서 첫번재, 마지막, n번째 */
 section.part1 div:first-of-type {
     background-color: cornflowerblue;
 }
@@ -110,6 +134,7 @@ section.part1 div:nth-last-of-type(2) {
 
 /* part2 : nth-child */
 /* nth-of-child 류는 자식요소 전체를 기준으로 순서를 카운팅한다. */
+/* part2 밑에 전체를 카운트 하기에 div를 지정해도 가상선택자의 선택요소와 맞지 않으면 무시된다. */
 section.part2 div:first-child {
     background-color: cornflowerblue;
 }

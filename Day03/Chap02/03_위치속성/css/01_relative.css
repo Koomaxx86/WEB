@@ -21,8 +21,7 @@ h1 { text-align: center; }
 }
 
 /* position : relative; */
-.container .relative {
-    /* 👩‍💻TODO: 여기에 작성해보세요:) */             
+.container .relative {           
     /* 초기 위치를 기준으로 위치 설정 */
     position: relative;
     border: 3px solid black;

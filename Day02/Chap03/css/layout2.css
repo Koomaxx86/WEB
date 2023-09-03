@@ -6,7 +6,7 @@
  */
 * { margin: 0; padding: 0; }
 
-/* TODO: 여기에 작성해보세요 */
+/* body 전체배경색 설정 */
 body {
     background-color: cornflowerblue;
 }
@@ -19,6 +19,8 @@ header {
 
 header h1 {
     float: left;            /* fl */
+    /* 기본폰트에 비례한 크기 기정 */
+    /* 1rem이면 기본 폰트와 동일한 사이즈. 1.8이면 1.8배 이다. */
     font-size: 1.8rem;      /* fz1.8rem */
 }
 
@@ -28,14 +30,17 @@ header ul {
 }
 
 header ul li {
+    /* list block를 inline 타입으로 변경해서 일자로 출력 */
     display: inline-block;      /* dib */
 }
 
 article {
+    /* article의 전체 사이즈 지정 */
     min-height: 500px;          /* mh500 */
 }
 
 article aside {
+    /* aside 좌측정렬 */
     float: left;        /* fl */
     width: 300px;       /* w300 */
     height: 500px;      /* h500 */
@@ -45,6 +50,8 @@ article aside {
 
 article section {
     float: right;       /* flr */
+    /* 요소의 넓이를 calc함수를 사용하여 산정 */
+    /* 부모요소(article)의 입력넓이(100%)에서 300px을 뺀 값 */
     width: calc(100% - 300px);  /* w */
     height: 500px;          /* h500 */
     background-color: beige;    /* backco */
@@ -61,15 +68,14 @@ footer {
 li { list-style-type: none; /* lstn */}
 
 /* 클래스 선택자 */
-/* TODO: 여기에 작성해보세요 */
 .container {
     width: 900px;
+    /* margin 0(상단,하단의 여백), auto(좌우 자동조절(가운데정렬)) */
     margin: 0 auto;
     border: 5px solid black;
 }
 
 /* 종속선택자 */
-/* TODO: 여기에 작성해보세요 */
 h1.logo {
     background: url(../img/logo.png) no-repeat center left ;
     background-size: cover;

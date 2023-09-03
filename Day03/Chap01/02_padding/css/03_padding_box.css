@@ -16,6 +16,8 @@
 .box1 {
   padding: 20px;
   line-height: 100px;
+  /* box sizing 셋팅이라서 item에서 셋팅한 가로 세로 크기에 
+  padding값과  line_height값이 더해진다 */
   box-sizing: content-box; /* 기본값 */
   /*
       content-box

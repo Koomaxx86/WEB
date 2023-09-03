@@ -4,18 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>기본 선택자</title>
+
   <style>
     /* 아이디 선택자 */
+    /* #아이디 */
+    /* title id에 아래 속성값을 준다 */
     #title {
       font-size: 40px;         /* fz40 (약어) */
     }
 
     /* class 선택자 */
+    /* .클래스명 */
     .btn {
+      /* 버튼 글자 주위로 padding 공간을 위아래 10, 좌우 12를 준다 */
       padding: 10px 12px;             /* p10px12px */
+      /* 하이퍼링크값인 버튼에는 밑줄선이 기본값으로 되있는데 none로 명시하여 밑줄 삭제 */
       text-decoration: none;          /* tdn */
+      /* 텍스트 컬러값 선택 */
       color: white;                 /* c:white; */
+      /* padding영역의 컬러 선택 */
       background-color: royalblue;  /* backco */
+      /* 요소의 모서리를 둥글게 만든다 */
       border-radius: 6px;             /* borr */
     }
 
@@ -31,9 +40,12 @@
     }
   </style>
 </head>
+
 <body>
+  <!-- h1사이즈. id는 title -->
   <h1 id="title">제목 텍스트 입니다.</h1>
 
+  <!-- a태그로 링크선언. href속성으로 경로값 전달. class "btn"으로 묶음 -->
   <a href="" class="btn">버튼1</a>
   <a href="" class="btn">버튼2</a>
   <a href="" class="btn">버튼3</a>

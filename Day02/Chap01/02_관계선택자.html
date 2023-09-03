@@ -6,10 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>관계선택자</title>
   <style>
+    /* articl 태그에 3px의 테두리를 오렌지색으로 표기 */
     article {
       border: 3px solid orange
     }
 
+    /* aside 태그에 3px의 테두리를 핫핑크색으로 표기 */
+    /* margin(박스와 내용과의 공간)을 10px준다. */
     aside {
       border: 3px solid hotpink;
       margin: 10px;
@@ -30,8 +33,8 @@
     /* 자식 선택자 */
     /* - 바로 밑의 있는 하위 요소만을 선택 */
     /* (기호 : > ) */
-    /* article 밑에 section 필수조건. 
-    aside 밑에 있는 section은 선택이 되지 않는다. */
+     /* article 밑에 section 필수조건.  */
+    /* aside 밑에 있는 section은 article 밑에 section이 없어서 선택이 되지 않는다. */
     article>section ul {
       color: blue;
     }
@@ -64,6 +67,7 @@
 
 <body>
 
+  <!-- 머릿말을 나타내는 header로 선언 -->
   <header>
     <!-- div.logo{로고} -->
     <div class="logo">로고</div>
@@ -74,9 +78,11 @@
     </ul>
   </header>
 
+  <!-- 본문을 나타내는 article선언 -->
   <article>
     <h1>제목</h1>
     <h3>설명</h3>
+    <!-- 컨텐츠의 세부 그룹화를 위한 section 선언 -->
     <section>
       <h2>부제목</h2>
       <!-- ul>(li{리스트$})*3 -->

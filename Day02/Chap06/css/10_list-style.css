@@ -50,6 +50,7 @@ ol.none {list-style-type: none;}
   - [list-style-position]
   - [list-style-image]
 */
+/* 3개의 개별속성을 한줄로 단축해서 쓰는법 */
 ul.menu {
   list-style: none outside url(../img/coffee-cup.png);
 }

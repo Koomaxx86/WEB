@@ -27,7 +27,7 @@
   overflow-y
   : 세로영역(y축) 기준으로 넘치는 컨텐츠 처리 유형을 지정
 */
-* {
+html {
   /* overflow-x: hidden; */
   /* overflow-y: hidden; */
 }

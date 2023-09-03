@@ -11,6 +11,7 @@ section {
 }
 
 /* :first-of-type - 가장 처음 요소를 선택 */
+/* section 중에 첫번째 요소를 선택 */
 section:first-of-type {
     color: #bc1212;
 }
@@ -70,6 +71,7 @@ form input {
 /* :enabled
     활성화된 태그를 선택
 */
+/* input태그중에 enabled 상태인 속성만 선택 */
 input:enabled {
     background-color: #beffff;
 }

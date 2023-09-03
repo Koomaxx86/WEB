@@ -12,10 +12,14 @@
   height: 200px;
 }
 
-
+/* 가상요소 after가 만들어진다 */
 .inner::after {
+  /* 해당 타입을 블럭으로 지정 */
   display: block;
+  /* 내용은 넣지 않는다 */
   content: '';
+  /* 위쪽에 float가 2개 라서 both로 준다. */
+  /* left나 right로 주면 한쪽으로 만 적용된다. */
   clear: both;
 }
 
