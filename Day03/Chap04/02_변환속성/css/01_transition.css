@@ -9,18 +9,22 @@
 
 .transition1,
 .transition2,
+/* 기본사이즈 */
 .transition3 {
     width: 200px;
     height: 200px;
     background-color: cornflowerblue;
 }
 
+/* 가로로 2초 동안 천천히 움직임 */
 .transition1 { transition: width 2s; }
+/* 마우스를 올릴경우 움직일 폭을 지정 */
 .transition1:hover { width: 600px; }
 
 .transition2 { transition: height 2s; }
 .transition2:hover { height: 600px; }
 
+/* 가로와 세로의 시간차를 둘 수도 있다. */
 .transition3 { transition: width 1s, height 2s; }
 .transition3:hover { width: 800px; height: 400px }
 
@@ -46,24 +50,24 @@
 
 /* 👩‍💻TODO: 여기에 작성해보세요:) */
 .transition4 { 
-    /* linear : 일정한 속도로 변환 */
+   transition-timing-function: linear;    /* trtf */
 
 }
 .transition5 {
     /* ease : 처음에는 아주 빠르고 마지막에 느려짐 */
-    
+    transition-timing-function: ease;
 }
 .transition6 {
     /* ease-in : 천천히 가다가 마지막에 조금 빨라짐 */
-
+    transition-timing-function: ease-in;
 }
 .transition7 {
     /* ease-out : 약간 일정하게 가다가 마지막에 느려짐 */
-    
+    transition-timing-function: ease-out;
 }
 .transition8 {
     /* ease-in-out : 느리게 가다가 중간에 빨라지다가 마지막에 다시 느려짐 */
-    
+    transition-timing-function: ease-in-out;
 }
 
 .transition9 {
@@ -85,6 +89,7 @@
 
     /* 3차 베지어 곡선을 이용한 변환속도를 지정하는 함수 */
     /* 👩‍💻TODO: 여기에 작성해보세요:) */
+    transition-timing-function: cubic-bezier(.1,1.24,.78,.49);
 }
 
 .transition10:hover { width: 1200px; }
