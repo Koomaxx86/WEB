@@ -28,10 +28,16 @@
 
 
 /* grid-template-rows */
+/* 각각의 행의 길이 px단위로 지정 */
 .rows-px { grid-template-rows: 100px 200px 300px;}
+/* 각각의 행의 길이 fr(1/n)단위로 지정 */
 .rows-fr { grid-template-rows: 1fr 2fr 1fr;}
+/* 마지막에 고정 px을 입력 후 나머지는 fr로 적용 */
 .rows-mix { grid-template-rows: 1fr 2fr 100px;}
+.rows-px { grid-template-rows: 100px 200px 300px;}
+/* 각각의 행의 이름을 지정 후 사이즈 입력 */
 .rows-name { grid-template-rows: [row1] 100px [row2] 150px [row3] 200px;}
+/* 반복함수를 적용. (횟수, 사이즈) */
 .rows-repeat { grid-template-rows: repeat(3, 200px); }
 
 
@@ -46,11 +52,17 @@
 /* grid-template-areas */
 
 /* grid-area : 영역의 이름을 지정하는 속성 */
+/* 각각의 태그에 이름 지정 */
+/* 이름을 지정시 하나의 이미지로 합처진다. */
+/* 행열 이어서는 붙일수 있으나 ㄱ, ㄴ 등 꺽이게는 불가능하다. */
 .grid-header { grid-area: header; }
 .grid-main { grid-area: main; }
 .grid-footer { grid-area: footer; }
 
 .grid-template-areas {
+    /* areas에서 이름을 지정한 아이템을 레이아웃에 영역을 선언 */
+    /* "." 을 입력하면 빈 영역으로 선언가능 */
+    /* 행과 열을 맞춰서 입력해줘야 한다. */
     grid-template-areas: 
         "header header header"
         "main main main"
@@ -59,20 +71,25 @@
 
 /* grid-template */
 .grid-template {
+     /* 정해진 레이아웃에 지정한 아이템의 영역을 선언 후 마지막에 행의 크기와 열의 크기를 지정 fr도 가능하다. */
     grid-template: 
         "header header header" 100px
-        "main main main" 200px
+        "m.ain main main" 200px
         "footer footer footer" 150px
         / 100px 200px 300px
     ;
 }
 
 /* gap */
+/* 아이템과 아이템 사이의 행의 간격 */
 .row-gap { row-gap: 100px; }
+/* 아이템과 아이템 사이의 열의 간격 */
 .column-gap { column-gap: 200px; }
+/* 아이템과 아이템 사이의 행과열의 간격(단축속성) */
 .gap { gap: 100px 200px; }
 
 /* auto */
+/* 크기가 설정되지 않은 아이템의 크기 지정 */
 .auto-rows { grid-auto-rows: 300px; }
 .auto-columns { grid-auto-columns: 300px; }
 .auto-item { background-color: mediumslateblue; }
@@ -82,28 +99,35 @@
 /* 3n-2 : 1, 4, 7, ... */
 /* 3n-1 : 2, 5, 8, ... */
 /* 3n   : 3, 6, 9, ... */
+/* grid-column: 1/2 : 선택된 item을 1~2라인 사이에 배치 */
 .auto-columns .item:nth-child(3n-2) { grid-column: 1/2; }
 .auto-columns .item:nth-child(3n-1) { grid-column: 2/3; }
 .auto-columns .item:nth-child(3) { grid-column: 3/4; }
 
+/* 남는 아이템을 grid-column 4~5로 지정해서 오른쪽으로 이동 */
+/* 나머지 남는 item 2개는 곂처있다. */
 .auto-columns .auto-item:nth-child(3n-2) { grid-column: 4/5; grid-row: 1/2; }
 .auto-columns .auto-item:nth-child(3n-1) { grid-column: 4/5; grid-row: 2/3;  }
 .auto-columns .auto-item:nth-child(3) { grid-column: 4/5; grid-row: 3/4; }
 
 /* grid-auto-flow */
+/* 행 순서로 채움 */
 .auto-flow-row { grid-auto-flow: row; }
+/* 열 순서로 채움 */
 .auto-flow-column { grid-auto-flow: column; }
 
 
 /* grid */
 /* [grid-template-rows] [grid-template-column] */
 .grid-rows-columns {
+    /* 단축속성(행, 열) */
     grid: 100px 200px / 1fr 3fr;
     /* grid-template-rows: 100px 200px; */
     /* grid-template-columns: 1fr 3fr; */
 }
 
 .grid-grid-template {
+    /* 영역과 사이즈를 한번에 grid로 선언가능 */
     grid:
         "header header header" 100px
         "main main main" 200px
@@ -112,6 +136,7 @@
 }
 
 /* align-content */
+/* 세로방향 위치지정 */
 .align { height: 1000px; }
 .align-start { align-content: start; }
 .align-end { align-content: end; }
@@ -122,6 +147,7 @@
 .align-stretch { align-content: stretch; }
 
 /* justify-content */
+/* 가로방향 위치지정 */
 .justify { grid-auto-flow: column; }
 .justify-start { justify-content: start; }
 .justify-end { justify-content: end; }
@@ -135,6 +161,7 @@
 /* place-content */
 .place { height: 1000px; }
 .place-center-center {
+    /* 아이템의 가운데 정렬 */
     place-content: center center;
     /* align-content    justify-content */
     /* 컨텐츠 수직정렬   컨텐츠 수평정렬 */
@@ -155,6 +182,7 @@
 }
 
 /* align-items */
+/* 전체 container에서가 아닌 1칸의 셀 안에서 위치를 지정한다. */
 .align-items-start { align-items: start; }
 .align-items-end { align-items: end; }
 .align-items-center { align-items: center; }
@@ -164,6 +192,7 @@
 
 
 /* justify-items */
+/* 전체 container에서가 아닌 1칸의 셀 안에서 위치를 지정한다. */
 .justify-items-start { justify-items: start; }
 .justify-items-end { justify-items: end; }
 .justify-items-center { justify-items: center; }
