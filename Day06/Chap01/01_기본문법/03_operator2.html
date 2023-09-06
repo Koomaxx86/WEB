@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>연산자</title>
+  <script>
+    let a = 10
+    let b = '10'
+    let c = '10'
+    let d = 'test'
+    let e = 'test'
+    let f   // undefined
+    
+    /* 연산자를 괄호로 묶지 않으면 문자열과 + 뒤에 a를 먼저 계산되기에 괄호로 묶어준다 */
+    console.log('a == b : ' + (a==b));
+    console.log('a === b : ' + (a===b));
+
+    console.log('b == c : ' + (b==c));
+    console.log('d == e : ' + (d==e));
+
+    /*  
+      NaN : Not a Number
+        - 숫자 연산을 했을 때, 유효한 숫자 데이터를 연산할 수 없는 경우에 반환
+    */
+    console.log(f + a); // a = 10운 숫자라서 +는 산술연산자가 된다
+    console.log(f + b); // a = '10' 문자열이라서 undefined -> 'undefined' + '10'이 된다. 
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
