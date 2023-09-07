@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요소 선택 - selector</title>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // 선택자로 요소 선택 : querySelector() 
+            // ul 태그를 선택한다.
+            const ul = document.querySelector('.product-list ul')
+            // ul태그의 스타일을 none로 지정한다
+            ul.style.listStyleType = 'none'
+            
+            // 선택자로 여러 요소 선택 : querySelectorAll() 
+            // 여러요소를 선택해서 lists에 저장. 배열로 저장된다.
+            const lists = document.querySelectorAll('.product-list ul li')
+
+            // 배열로 저장된 lists(li태그)를 forEach로 하나씩 꺼네온다.
+            lists.forEach( (list) => {
+                // list.children[0]     : li 태그 자식요소 중 0번째 → 여기서는 img
+                // forEach를 통해 꺼내진 각각의 li의 0번쨰 자식에 접근한다.
+                list.children[0].src = './img/product.webp'
+                list.children[0].style.width = '300px'
+            })
+        })
+        
+    </script>
+</head>
+<body>
+
+    <div class="product-list">
+        <ul>
+            <li>
+                <img src="" alt="">
+            </li>
+            <li>
+                <img src="" alt="">
+            </li>
+            <li>
+                <img src="" alt="">
+            </li>
+            <li>
+                <img src="" alt="">
+            </li>
+        </ul>
+    </div>
+
+
+</body>
+</html>

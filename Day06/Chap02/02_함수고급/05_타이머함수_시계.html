@@ -6,8 +6,12 @@
   <title>타이머함수 - 시계</title>
   <script>
 
+// 내장 함수라서 body가 실행되고 마지막에 실행된다
     setInterval(() => {
+
+      // 객체생성
       let timer = new Date()
+      // 시, 분, 초를 get메소드를 통해 가져온다
       let h = timer.getHours()
       let m = timer.getMinutes()
       let s = timer.getSeconds()

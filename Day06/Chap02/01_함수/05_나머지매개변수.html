@@ -11,10 +11,12 @@
     // 여러값을 배열로 묶어서 매개변수로 사용한다
     // 1번과 2번은 고정된 인자값
     function sample(a,b, ...items) {
+      // a와 b는 고정된 값이라서 그대로 출력하면 된다.
       console.log(`a : ${a}`);
       console.log(`b : ${b}`);
       document.write(`a : ${a}, b : ${b}, `)
 
+      // ...item값은 배열이라서 배열출력 방법으로 출력한다.
       for (let i = 0; i < items.length; i++) {
         console.log(items[i]);
         document.write(items[i])
