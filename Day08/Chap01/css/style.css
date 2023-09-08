@@ -70,3 +70,34 @@ button {
 button:active, button:hover {
     background-color: royalblue;
 }
+
+#box5.active {
+    animation: changeBG 2s;
+    animation-fill-mode: forwards;  /* 애니메이션 마지막 프레임에 고정 */
+}
+
+#box5.reset {
+    animation: removeBG 2s;
+    animation-fill-mode: forwards;  /* 애니메이션 마지막 프레임에 고정 */
+}
+
+
+@keyframes changeBG {
+    0% {}
+
+    100% {
+        width: 600px;
+        background-color: orange;
+    }
+}
+
+@keyframes removeBG {
+    0% {
+        width: 600px;
+        background-color: orange;
+    }
+   100% {
+        width: 100px;
+        background-color: orange;
+    }
+}
