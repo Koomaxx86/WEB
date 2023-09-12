@@ -7,9 +7,15 @@
     <title>AJAX 로 요청하기</title>
 </head>
 
+
+
 <body>
 
     <h1>AJAX 요청하기</h1>
+
+<!-- -------------------------------------------------------------------------------------------------------- -->
+
+
 
     <h3>게시글 조회</h3>
     <label for="boardNo">게시글 번호</label>
@@ -24,9 +30,15 @@
 
     <hr>
 
+
+
+<!-- --------------------------------------------------------------------------------------- -->
+
+
+
     <h3>게시글 쓰기</h3>
     <h4>FORM 전송(동기식) | AJAX 전송(비동기식)</h4>
-    <form action="//192.168.30.119:8080/api/board" method="post">
+    <form action="//127.0.0.1:8080/api/board" method="post">
         <table>
             <tr>
                 <td><label for="title">제목</label></td>
@@ -51,9 +63,15 @@
 
     <hr>
 
+
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+
+
     <h3>게시글 수정</h3>
     <h4>FORM 전송(동기식) | AJAX 전송(비동기식)</h4>
-    <form action="//192.168.30.119:8080/api/board/update" method="post">
+    <form action="//127.0.0.1:8080/api/board/update" method="post">
         <table>
             <tr>
                 <td><label for="boradNo">게시글 번호</label></td>
@@ -82,9 +100,15 @@
 
     <hr>
 
+
+
+<!-- -------------------------------------------------------------------------------------------------------- -->
+
+
+
     <h3>게시글 삭제</h3>
     <h4>FORM 전송(동기식) | AJAX 전송(비동기식)</h4>
-    <form action="//192.168.30.119:8080/api/board/delete" method="post">
+    <form action="//127.0.0.1:8080/api/board/delete" method="post">
         <table>
             <tr>
                 <td><label for="boradNo">게시글 번호</label></td>
@@ -99,6 +123,12 @@
 
     <hr>
 
+
+
+<!-- -------------------------------------------------------------------------------------------------------- -->
+
+
+
     <h3>게시글 목록</h3>
     <table border="1" id="board-list">
         <tr id="board-title">
@@ -112,6 +142,11 @@
             <td colspan="5" align="center">조회된 내역이 없습니다.</td>
         </tr>
     </table>
+
+
+
+<!-- -------------------------------------------------------------------------------------------------------- -->
+
 
 
     <div style="height: 500px;"></div>
@@ -164,7 +199,7 @@
             }
 
             let boardNo = document.getElementById('boardNo').value
-            let url = "http://192.168.30.119:8080/api/board?boardNo=" + boardNo
+            let url = "http://127.0.0.1:8080/api/board?boardNo=" + boardNo
 
             // 요청 설정
             // request.open("요청메소드", url, 비동기여부)
@@ -179,6 +214,12 @@
             request.send()
 
         }
+
+
+
+// --------------------------------------------------------------------------------------------------------   
+
+
 
         // 게시글 쓰기 요청 - JSON
         function insertJSON() {
@@ -206,7 +247,7 @@
 
                     // 비동기식의 목록이동
                     location.href = './list.html'
-                    // location.assign = 'http://192.168.30.119:8080/board/list'
+                    // location.assign = 'http://127.0.0.1:8080/board/list'
                 }
 
                 // 에러 발생
@@ -216,7 +257,7 @@
             }
 
             // 요청 설정
-            let url = 'http://192.168.30.119:8080/api/board'
+            let url = 'http://127.0.0.1:8080/api/board'
 
             request.open("POST", url, true)
             request.setRequestHeader("Content-Type", "application/json")
@@ -225,6 +266,11 @@
             request.send(JSON.stringify(data))
 
         }
+
+
+
+// -------------------------------------------------------------------------------------------------------- 
+
 
 
         // 게시글 쓰기 요청 - XML
@@ -259,13 +305,19 @@
             }
 
             // 요청 설정
-            let url = 'http://192.168.30.119:8080/api/board'
+            let url = 'http://127.0.0.1:8080/api/board'
 
             request.open("POST", url, true)
             request.setRequestHeader("Content-Type", "application/xml")
             request.send(data)
 
         }
+
+
+
+// -------------------------------------------------------------------------------------------------------- 
+
+
 
         // 게시글 수정 요청 - JSON
         function updateJSON() {
@@ -301,7 +353,7 @@
             }
 
             // 요청 설정
-            let url = 'http://192.168.30.119:8080/api/board'
+            let url = 'http://127.0.0.1:8080/api/board'
 
             request.open("PUT", url, true)
             request.setRequestHeader("Content-Type", "application/json")
@@ -310,6 +362,11 @@
             request.send(JSON.stringify(data))
 
         }
+
+
+
+// -------------------------------------------------------------------------------------------------------- 
+
 
 
         // 게시글 수정 요청 - XML
@@ -346,13 +403,18 @@
             }
 
             // 요청 설정
-            let url = 'http://192.168.30.119:8080/api/board'
+            let url = 'http://127.0.0.1:8080/api/board'
 
             request.open("PUT", url, true)
             request.setRequestHeader("Content-Type", "application/xml")
             request.send(data)
 
         }
+
+
+
+// -------------------------------------------------------------------------------------------------------- 
+
 
 
         // 게시글 삭제 요청 - JSON
@@ -383,7 +445,7 @@
             }
 
             // 요청 설정
-            let url = 'http://192.168.30.119:8080/api/board'
+            let url = 'http://127.0.0.1:8080/api/board'
 
             request.open("DELETE", url, true)
             request.setRequestHeader("Content-Type", "application/json")
@@ -392,6 +454,11 @@
             request.send(JSON.stringify(data))
 
         }
+
+
+
+// -------------------------------------------------------------------------------------------------------- 
+
 
 
         // 게시글 삭제 요청 - XML
@@ -422,13 +489,18 @@
             }
 
             // 요청 설정
-            let url = 'http://192.168.30.119:8080/api/board'
+            let url = 'http://127.0.0.1:8080/api/board'
 
             request.open("DELETE", url, true)
             request.setRequestHeader("Content-Type", "application/xml")
             request.send(data)
 
         }
+
+
+
+// -------------------------------------------------------------------------------------------------------- 
+
 
 
         // 게시글 목록 요청
@@ -475,7 +547,7 @@
                 }
             }
             
-            let url = "http://192.168.30.119:8080/api/board"
+            let url = "http://127.0.0.1:8080/api/board"
 
             request.open("GET", url, true)
             request.setRequestHeader("Content-Type", "application/json")
