@@ -118,11 +118,12 @@
 
         // 게시글 조회 요청
         function getBoard() {
+            
             let boardNo = $('#boardNo').val()
             let url = "http://192.168.30.119:8080/api/board?boardNo=" + boardNo
 
             // jQuery 로 AJAX 요청
-            $.ajax({
+            $.ajax({ // 함수 호출
                 type            : 'GET',                  // 요청 메소드
                 url             : url,                    // 요청 URL
                 data            : '',                     // 요청 데이터
